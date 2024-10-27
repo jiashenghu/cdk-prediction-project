@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 import pickle  # if your model is saved as a pickle file
 import warnings
+import sklearn
 warnings.filterwarnings('ignore')
 
 # Load the trained model (adjust the file path if needed)

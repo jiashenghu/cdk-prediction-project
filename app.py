@@ -1,12 +1,12 @@
 import streamlit as st
 import numpy as np
 import pickle  # if your model is saved as a pickle file
-import warnings
 import sklearn
+import warnings
 warnings.filterwarnings('ignore')
 
 # Load the trained model (adjust the file path if needed)
-with open('gb_model.pkl', 'rb') as model_file:
+with open('rf_model.pkl', 'rb') as model_file:
     model = pickle.load(model_file)
 
 # Page styling

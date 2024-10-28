@@ -7,7 +7,7 @@ import warnings
 import pickle
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.ensemble import RandomForestClassifier  # Updated import
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 
 # Ignore warnings
@@ -80,9 +80,9 @@ def encode_categorical(df):
 
 # Train model
 def train_model(X_train, y_train):
-    gb = GradientBoostingClassifier()
-    gb.fit(X_train, y_train)
-    return gb
+    rf = RandomForestClassifier()  # Updated model to RandomForestClassifier
+    rf.fit(X_train, y_train)
+    return rf
 
 # Evaluate model
 def evaluate_model(model, X_train, X_test, y_train, y_test):
@@ -123,13 +123,14 @@ def main():
     evaluate_model(model, X_train, X_test, y_train, y_test)
 
     # Save the model to a file
-    with open('gb_model.pkl', 'wb') as file:
+    with open('rf_model.pkl', 'wb') as file:  # Updated filename to rf_model.pkl
         pickle.dump(model, file)
-    print("Model saved as gb_model.pkl")
+    print("Model saved as rf_model.pkl")
 
 # Run the main function
 if __name__ == "__main__":
     main()
+
 
 
 

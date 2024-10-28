@@ -6,7 +6,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # Load the trained model (adjust the file path if needed)
-with open('rf_model.pkl', 'rb') as model_file:
+with open('gb_model.pkl', 'rb') as model_file:
     model = pickle.load(model_file)
 
 # Page styling
